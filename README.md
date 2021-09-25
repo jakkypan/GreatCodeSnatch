@@ -7,3 +7,5 @@
 [CpuInfo.kt](CpuInfo.kt)：benchmark下获取手机cpu信息的代码，如核数、频率、是否被锁
 
 [SoLoader.java](SoLoader.java)：so加载
+
+[ClassLoaderFactory.java](ClassLoaderFactory.java)：framework层的class loader
