@@ -13,3 +13,5 @@
 [execShell.java](execShell.java)：java执行shell
 
 [CloseGuard使用](CloseGuard使用.md)
+
+[Mmap和Ashmem](Mmap和Ashmem.md)
