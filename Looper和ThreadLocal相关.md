@@ -73,3 +73,47 @@ public class Han {
 }
 
 ```
+
+# ThreadLocal的使用场景
+
+简单的使用：
+
+```java
+public class Han {
+	ThreadLocal<String> tl;
+	ThreadLocal<String> tl2;
+
+	public void test() {
+		tl2 = new ThreadLocal<>();
+		tl2.set("tl...");
+		Log.e("1111", "tl2: " + tl2.get());
+
+		new Thread(() -> {
+			tl = new ThreadLocal<>();
+			tl.set("tl...");
+			Log.e("1111", "tl: " + tl.get() + ", tl2: " + tl2.get());
+		}).start();
+	}
+}
+
+output：
+2021-09-30 20:48:45.034 32640-32640/com.panda.myapplication E/1111: tl2: tl...
+2021-09-30 20:48:45.037 32640-32670/com.panda.myapplication E/1111: tl: tl..., tl2: null
+```
+
+ThreadLocal hash冲突与内存泄漏问题：
+
+[](https://blog.csdn.net/Summer_And_Opencv/article/details/104632272)
+
+使用场景：
+
+* 线程中处理一个非常复杂的业务，可能方法有很多，那么，使用 ThreadLocal 可以代替一些参数的显式传递；
+* 线程内上线文管理器、数据库连接等可以用到 ThreadLocal;
+* 在一些多线程的情况下，如果用线程同步的方式，当并发比较高的时候会影响性能，可以改为 ThreadLocal 的方式，例如高性能序列化框架 Kyro 就要用 ThreadLocal 来保证高性能和线程安全；
+* 的
+
+使用注意事项：
+
+* 使用 ThreadLocal 的时候，最好要声明为静态的；
+* 使用完 ThreadLocal ，最好手动调用 remove() 方法，例如上面说到的 Session 的例子，如果不在拦截器或过滤器中处理，不仅可能出现内存泄漏问题，而且会影响业务逻辑；
+
