@@ -16,4 +16,4 @@
 
 [Mmap和Ashmem](Mmap和Ashmem.md)
 
-[Looper相关](Looper相关.md)
+[Looper和ThreadLocal相关](Looper和ThreadLocal相关.md)
