@@ -103,14 +103,13 @@ output：
 
 ThreadLocal hash冲突与内存泄漏问题：
 
-[](https://blog.csdn.net/Summer_And_Opencv/article/details/104632272)
+[冲突与内存泄漏问题](https://blog.csdn.net/Summer_And_Opencv/article/details/104632272)
 
-使用场景：
+使用场景：[ThreadLocal三种使用场景](https://cloud.tencent.com/developer/article/1636025)
 
 * 线程中处理一个非常复杂的业务，可能方法有很多，那么，使用 ThreadLocal 可以代替一些参数的显式传递；
 * 线程内上线文管理器、数据库连接等可以用到 ThreadLocal;
 * 在一些多线程的情况下，如果用线程同步的方式，当并发比较高的时候会影响性能，可以改为 ThreadLocal 的方式，例如高性能序列化框架 Kyro 就要用 ThreadLocal 来保证高性能和线程安全；
-* 的
 
 使用注意事项：
 
