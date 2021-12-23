@@ -2,9 +2,9 @@
 
 具体地址：
 
-[scoped_string_chars.h](libnativehelper/header_only_include/nativehelper/scoped_string_chars.h)
+`libnativehelper/header_only_include/nativehelper/scoped_string_chars.h`
 
-[scoped_utf_chars.h](libnativehelper/header_only_include/nativehelper/scoped_utf_chars.h)
+`libnativehelper/header_only_include/nativehelper/scoped_utf_chars.h`
 
 一般情况下，我们写jni的时候如果传入了string，则需要调用`GetStringUTFChars()`来转换成`char *`，并且在使用完后需要主动调用`ReleaseStringUTFChars()`来释放，否则会有内存泄漏。这样句有点麻烦，并且容易出错。
 
@@ -12,7 +12,7 @@
 
 具体地址:
 
-[scoped_local_ref.h](libnativehelper/header_only_include/nativehelper/scoped_local_ref.h)
+`libnativehelper/header_only_include/nativehelper/scoped_local_ref.h`
 
 当localref的声明期走完会主动去释放。原理跟上面的差不多，都是根据析构函数去释放。
 
@@ -36,7 +36,7 @@ if (ctor == NULL) {
 
 具体地址：
 
-[scoped_local_frame.h](libnativehelper/header_only_include/nativehelper/scoped_local_frame.h)
+`libnativehelper/header_only_include/nativehelper/scoped_local_frame.h`
 
 有必要知道当前有多少本地引用被使用，因为许多函数都返回本地引用，JNI需要设置本地引用的最大值。同时，如果创建了大对象的引用，就有耗尽可用存储器的风险。本地引用的一般函数有：
 
