@@ -19,3 +19,5 @@
 [Looper和ThreadLocal相关](Looper和ThreadLocal相关.md)
 
 [nativehelper的几个文件](nativehelper的几个文件.md)
+
+[通用concat](通用concat.md)
